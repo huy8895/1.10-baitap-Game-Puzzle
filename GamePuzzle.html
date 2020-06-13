@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>puzzle</title>
+    <style>
+        .wrap
+        {
+            width: 80%; /* kích thước chiều rộng trang web */
+            float: left; /* canh div từ trái sang */
+            margin-left: auto;
+            margin-right: auto;
+
+
+        }
+        .left{
+            width: 32%; /* kích thước chiều rộng trang web */
+            float: left; /* canh div từ trái sang */
+            padding: 0px 1%;
+            height: 50%;
+
+        }
+        .right{
+            width: 32%; /* kích thước chiều rộng trang web */
+            float: left; /* canh div từ trái sang */
+            padding: 0px 1%;
+        }
+        .center{
+            width: 32%; /* kích thước chiều rộng trang web */
+            float: left; /* canh div từ trái sang */
+
+        }
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <div class="left"><img src="Images/ysKhongGian-row-1-col-1.jpg" height="auto" width="100%" id = 'left' onclick='flipImage(this.id)'/></div>
+    <div class="center"><img src="Images/ysKhongGian-row-1-col-2.jpg" height="auto" width="100%" id = 'center' onclick='flipImage(this.id)' /></div>
+    <div class="right"><img src="Images/ysKhongGian-row-1-col-3.jpg" height="auto" width="100%" id = 'right' onclick='flipImage(this.id)'/></div>
+</div>
+<script>
+    let i1L = ['ysKhongGian','ysCaoBoi','ysMacDinh'];
+    let i1C = ['ysKhongGian','ysCaoBoi','ysMacDinh'];
+    let i1R= ['ysKhongGian','ysCaoBoi','ysMacDinh'];
+    let win = i1L[0] == i1C[0] && i1L[0] == i1R[0];
+    let i = 0;
+    let lefttrue = document.getElementById('left') == 'left';
+    let centertrue = document.getElementById('center') == 'center';
+    let righttrue = document.getElementById('right') == 'right';
+    function flipImage(id){
+        if (id == 'left'){
+            if (i < 3){
+                document.getElementById("left").src = 'Images/' + i1L[i] +'-row-1-col-1.jpg';
+                i++;
+            }else{
+                i = 0;
+                document.getElementById("left").src = 'Images/' + i1L[i] +'-row-1-col-1.jpg';
+                i++;
+            }
+
+        }
+        else if (id == 'center'){
+            if (i < 3){
+                document.getElementById("center").src = 'Images/' + i1L[i] +'-row-1-col-2.jpg';
+                i++;
+            }else{
+                i = 0;
+                document.getElementById("center").src = 'Images/' + i1L[i] +'-row-1-col-2.jpg';
+                i++;
+            }
+
+        }
+        else {
+            if (i < 3){
+                document.getElementById("right").src = 'Images/' + i1L[i] +'-row-1-col-3.jpg';
+                i++;
+            }else{
+                i = 0;
+                document.getElementById("right").src = 'Images/' + i1L[i] +'-row-1-col-3.jpg';
+                i++;
+            }
+
+        }
+    }
+
+
+</script>
+</body>
+</html>
